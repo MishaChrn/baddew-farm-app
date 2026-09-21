@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baddew Farm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Baddew Farm</h1>
+        
+        <div class="input-section">
+            <textarea id="dataInput" placeholder="Enter your text here..." rows="4"></textarea>
+            
+            <div class="button-group">
+                <button id="saveBtn">Save Data Locally</button>
+                <button id="loadBtn">Load Save Data</button>
+                <!-- Hidden file input for load feature -->
+                <input type="file" id="fileInput" accept=".json" style="display: none;">
+            </div>
+        </div>
+
+        <div class="display-section">
+            <h2>Loaded Data:</h2>
+            <div id="dataDisplay" class="display-area">
+                (Loaded data will be displayed here)
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

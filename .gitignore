@@ -1,0 +1,57 @@
+# =========================
+# Operating System Files
+# =========================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+Desktop.ini
+
+# =========================
+# Editor Files
+# =========================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# =========================
+# Project Specific
+# =========================
+
+# テスト時などに誤ってアプリフォルダ内に保存・配置してしまったセーブデータを除外
+baddew-farm-save-data*.json
+*.json
+
+# （必要に応じて、セーブデータ以外のJSONが必要になった場合は上記 *.json を調整してください。
+# 現状はバックエンドレスであり、セーブデータしかJSONを扱わない想定のため安全側に倒しています）
