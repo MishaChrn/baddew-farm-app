@@ -1,6 +1,6 @@
 # Baddew Farm 🚜
 
-Baddew Farm is an asynchronous multiplayer browser game where you play by directly sharing your "save data" (a JSON file) with friends via WhatsApp, Email, or any messaging app.
+Baddew Farm is an asynchronous multiplayer browser game where you play by directly sharing your "save data" (an obfuscated .bfsav file) with friends via WhatsApp, Email, or any messaging app.
 
 No backend servers, no complex databases. Just pure HTML, CSS, Vanilla JS, and manual file sharing!
 
@@ -33,7 +33,7 @@ No backend servers, no complex databases. Just pure HTML, CSS, Vanilla JS, and m
 
 ### 1. Start a New Farm or Load an Existing One
 - **New Game:** Open `index.html`, enter your name, and click "Start New Game".
-- **Load Game:** If a friend sent you a `baddew-farm-save-data.json` file, click "Load Game (JSON)" and select it.
+- **Load Game:** If a friend sent you a `baddew-farm-save-data.bfsav` file, click "Load Game (BFSAV)" and select it.
 
 ### 2. Play Your Turn
 - Post a message on the Chat Board.
@@ -42,7 +42,7 @@ No backend servers, no complex databases. Just pure HTML, CSS, Vanilla JS, and m
 
 ### 3. Save & Export
 - Once you're done playing for the moment, click the **"Save & Export"** button at the top of the screen.
-- This will compile your actions into a report, save the game state, and download a new `baddew-farm-save-data.json` file to your device.
+- This will compile your actions into a report, save the game state, and download a new `baddew-farm-save-data.bfsav` file to your device.
 
 ### 4. Pass the Turn
-- Send the newly downloaded JSON file to your friend. It's their turn to load it and play!
+- Send the newly downloaded save file to your friend. It's their turn to load it and play!

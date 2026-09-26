@@ -212,7 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const reader = new FileReader();
         reader.onload = (e) => {
             try {
-                const loadedData = JSON.parse(e.target.result);
+                const decodedString = decodeURIComponent(atob(e.target.result));
+                const loadedData = JSON.parse(decodedString);
                 
                 // Very basic validation
                 if (!loadedData.players) {
@@ -295,12 +296,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const jsonString = JSON.stringify(gameState, null, 2);
-        const blob = new Blob([jsonString], { type: 'application/json' });
+        const base64String = btoa(encodeURIComponent(jsonString));
+        const blob = new Blob([base64String], { type: 'text/plain' });
         const url = URL.createObjectURL(blob);
         
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'baddew-farm-save-data.json';
+        a.download = 'baddew-farm-save-data.bfsav';
         document.body.appendChild(a);
         a.click();
         
