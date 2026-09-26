@@ -1,27 +1,48 @@
 # Baddew Farm 🚜
 
-Baddew Farm is an asynchronous multiplayer browser game where you play by directly sharing your "save data" with friends.
+Baddew Farm is an asynchronous multiplayer browser game where you play by directly sharing your "save data" (an obfuscated .bfsav file) with friends via WhatsApp, Email, or any messaging app.
 
-Currently, we have built the foundation: the ability to "Save" and "Load" data!
+No backend servers, no complex databases. Just pure HTML, CSS, Vanilla JS, and manual file sharing!
 
 ---
 
-## How to Play (Sharing Save Data)
+## 🌟 Game Features
 
-In this game, your progress is saved as a file. You play multiplayer by sending this file to your friends.
+### 🥔 1. Farm & Grow Crops
+- You have a 3x3 grid to grow three types of crops: Potatoes, Carrots, and the original "Mish-Mash Seeds".
+- Plant seeds, water them, and harvest! 
+- **Co-op Bonus:** If you water a crop that *you* planted, it takes 2 waters to grow. But if you water a crop that a *friend* planted in a previous session, it only takes 1 water! Help each other out.
 
-### 💾 1. Save Your Data
-1. Type whatever you want (like your game progress) into the text box on the screen.
-2. Click the green **"Save Data Locally"** button.
-3. A file named `baddew-farm-save-data.json` will be downloaded to your computer or phone. This is your "save data"!
+### 💬 2. Chat Board
+- A retro cafe-style chalkboard to leave messages for the next player.
+- You can post 1 message per session.
+- The board holds the latest 3 messages (older messages are pushed out automatically).
 
-### 🤝 2. Send Your Data to a Friend
-Send the downloaded `baddew-farm-save-data.json` file to the next player using WhatsApp, Email, or any messaging app.
+### 🏆 3. Baddew Points
+- A shared score for your friend group!
+- Earn 1 point every time you load the game.
+- Earn 1 point for posting on the Chat Board.
+- Earn 1 point for every 10 farming actions (planting, watering, harvesting) you do individually.
 
-### 📂 3. Load Your Friend's Data
-1. Download the `baddew-farm-save-data.json` file your friend sent you onto your computer or phone.
-2. Open Baddew Farm and click the blue **"Load Save Data"** button.
-3. Select the file you just downloaded from your friend.
-4. Your friend's text will appear at the bottom of the screen (under "Loaded Data:")!
+### 📋 4. Session Reports
+- Every time you load a friend's save file, you'll see a summary of exactly what they did in their last session!
 
-Now you've received your friend's progress. Add your own text, save it again, and send it back to them!
+---
+
+## 🎮 How to Play
+
+### 1. Start a New Farm or Load an Existing One
+- **New Game:** Open `index.html`, enter your name, and click "Start New Game".
+- **Load Game:** If a friend sent you a `baddew-farm-save-data.bfsav` file, click "Load Game (BFSAV)" and select it.
+
+### 2. Play Your Turn
+- Post a message on the Chat Board.
+- Tend to the farm (Plant, Water, Harvest).
+- Watch your Baddew Points grow!
+
+### 3. Save & Export
+- Once you're done playing for the moment, click the **"Save & Export"** button at the top of the screen.
+- This will compile your actions into a report, save the game state, and download a new `baddew-farm-save-data.bfsav` file to your device.
+
+### 4. Pass the Turn
+- Send the newly downloaded save file to your friend. It's their turn to load it and play!

@@ -2,31 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baddew Farm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Baddew Browser Farm</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Baddew Farm</h1>
-        
-        <div class="input-section">
-            <textarea id="dataInput" placeholder="Enter your text here..." rows="4"></textarea>
-            
-            <div class="button-group">
-                <button id="saveBtn">Save Data Locally</button>
-                <button id="loadBtn">Load Save Data</button>
-                <!-- Hidden file input for load feature -->
-                <input type="file" id="fileInput" accept=".json" style="display: none;">
+    <div id="app-container">
+        <header>
+            <h1>Baddew Farm</h1>
+            <div id="user-info-area" class="hidden">
+                <p>Player: <span id="display-player-name"></span></p>
+                <p class="points-display">Baddew Points: <span id="display-baddew-points">0</span></p>
             </div>
-        </div>
+        </header>
 
-        <div class="display-section">
-            <h2>Loaded Data:</h2>
-            <div id="dataDisplay" class="display-area">
-                (Loaded data will be displayed here)
-            </div>
-        </div>
+        <main>
+            <!-- Auth/Start Area -->
+            <section id="auth-section">
+                
+                <div class="flavor-text-memory">
+                    <p>—baddewwwwww</p>
+                    <p>—I mish you. I want to plant some mish-mash seeds on my farm.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Start a New Farm</h2>
+                    <div class="input-group">
+                        <input type="text" id="new-player-name" placeholder="Enter your name" maxlength="20">
+                        <button id="btn-start-game">Start New Game</button>
+                    </div>
+                </div>
+                
+                <div class="divider">OR</div>
+                
+                <div class="card">
+                    <h2>Load Farm Data</h2>
+                    <div class="file-upload-wrapper">
+                        <button id="btn-trigger-load">Load Game (BFSAV)</button>
+                        <input type="file" id="file-load-game" accept=".bfsav" style="display: none;">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Game Area (Initially Hidden) -->
+            <section id="game-section" class="hidden">
+                <div class="actions-header">
+                    <button id="btn-save-export" class="primary-btn">Save & Export</button>
+                </div>
+                
+                <!-- Chat Board Section -->
+                <div id="chat-board" class="card chalkboard">
+                    <h3>Chat Board</h3>
+                    <div id="chat-messages" class="chat-messages-area">
+                        <!-- Messages render here -->
+                    </div>
+                    <div class="chat-input-area">
+                        <textarea id="chat-input" rows="2" placeholder="Write a message..." maxlength="100"></textarea>
+                        <button id="btn-post-chat">Post</button>
+                    </div>
+                </div>
+                <!-- Farming Area (Phase 3) -->
+                <div id="farm-area" class="card">
+                    <h3>Farm Grid</h3>
+                    
+                    <!-- Row Labels and Grid -->
+                    <div class="farm-layout">
+                        <div class="farm-row-labels">
+                            <div class="row-label">🥔<br><small>Potato</small></div>
+                            <div class="row-label">🥕<br><small>Carrot</small></div>
+                            <div class="row-label">🌟<br><small>Mish-Mash Seeds</small></div>
+                        </div>
+                        <div id="farm-grid" class="farm-grid-container">
+                            <!-- 9 slots will be rendered here by JS -->
+                        </div>
+                    </div>
+
+                    <div class="farm-controls">
+                        <button id="btn-action-plant" class="farm-btn btn-plant">Plant</button>
+                        <button id="btn-action-water" class="farm-btn btn-water">Water</button>
+                        <button id="btn-action-harvest" class="farm-btn btn-harvest">Harvest</button>
+                    </div>
+                </div>
+                <!-- Log Area -->
+                <div id="log-area" class="card">
+                    <h3>Farm Logs</h3>
+                    <div id="log-content">
+                        <!-- Logs will appear here -->
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
     <script src="app.js"></script>
